@@ -1,9 +1,9 @@
 import {inject} from '@loopback/core';
-import {DefaultCrudRepository} from '@loopback/repository';
+import {SequelizeCrudRepository} from '@loopback/sequelize';
 import {DbDataSource} from '../datasources';
 import {Role, RoleRelations} from '../models';
 
-export class RoleRepository extends DefaultCrudRepository<
+export class RoleRepository extends SequelizeCrudRepository<
   Role,
   typeof Role.prototype.id,
   RoleRelations

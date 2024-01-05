@@ -1,5 +1,5 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
-import {juggler} from '@loopback/repository';
+import {SequelizeDataSource} from '@loopback/sequelize';
 
 const config = {
   name: 'db',
@@ -19,7 +19,7 @@ const config = {
 // Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
 @lifeCycleObserver('datasource')
 export class DbDataSource
-  extends juggler.DataSource
+  extends SequelizeDataSource
   implements LifeCycleObserver
 {
   static dataSourceName = 'db';
